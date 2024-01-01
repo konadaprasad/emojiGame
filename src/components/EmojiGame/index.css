@@ -1,0 +1,128 @@
+/* Write your code here. */
+.container {
+  background-image: linear-gradient(to bottom, #9796f0, #fbc7d4);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: 'roboto';
+}
+.nav-bar {
+  background-color: #ffffff33;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+.logo-image {
+  height: 70px;
+  width: 70px;
+}
+.scores {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.score {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 20px;
+}
+.emojis-cont {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 70px;
+}
+.emoji-cont {
+  background-color: #ffffff33;
+  border: solid 2px #ffffff30;
+  border-radius: 10px;
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.emoji {
+  height: 80px;
+  width: 80px;
+}
+.emoji-game {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.result-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 60px;
+  padding: 20px;
+  background-color: #ffffff33;
+  border: solid 2px #ffffff30;
+  width: 400px;
+  border-radius: 10px;
+}
+.cont1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cont2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.para {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 800;
+}
+.para1 {
+  color: #6a59ff;
+  font-size: 20px;
+  font-weight: 800;
+}
+.btn {
+  border: solid 0px;
+  background-color: #ffce27;
+  border-radius: 15px;
+  color: #3d3d3d;
+  height: 50px;
+  width: 100px;
+}
+.win-image {
+  height: 200px;
+  width: 150px;
+}
+.items-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn2 {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid 0px;
+  border: none;
+}
