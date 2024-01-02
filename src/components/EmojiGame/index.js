@@ -114,21 +114,22 @@ class EmojiGame extends Component {
 
   clickingOnEmoji = id => {
     const {filteredList, winOrLose, totalScore, topScore} = this.state
-    const filterList = emojisList.find(each => each.id === id)
-    const checkItem = filteredList.includes(filterList)
+    const filterList = emojisList.filter(each => each.id === id)
+    const checkItem = filteredList.map(eachItem=>eachItem.id===id)
+    console.log(checkItem)
     let score
+    if(
     if (checkItem === true) {
       if (totalScore > topScore) {
         score = totalScore
-      } else if (topScore === 11) {
-        score = 12
-      } else {
+      }  else {
         score = topScore
       }
       this.setState({winOrLose: true, topScore: score})
-    } else {
+    } 
+    else {
       this.setState(prevState => ({
-        filteredList: [...prevState.filteredList, filterList],
+        filteredList: [...prevState.filteredList, filterList[0],
         winOrLose: false,
         totalScore: prevState.totalScore + 1,
       }))
