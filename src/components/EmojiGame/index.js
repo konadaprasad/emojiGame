@@ -100,6 +100,7 @@ class EmojiGame extends Component {
     topScore: 0,
     filteredList: [],
     winOrLose: false,
+    win: false,
   }
 
   changeWinOrLose = () => {
@@ -113,23 +114,22 @@ class EmojiGame extends Component {
   }
 
   clickingOnEmoji = id => {
-    const {filteredList, winOrLose, totalScore, topScore} = this.state
-    const filterList = emojisList.filter(each => each.id === id)
-    const checkItem = filteredList.map(eachItem=>eachItem.id===id)
-    console.log(checkItem)
+    const {filteredList, winOrLose, totalScore, topScore, win} = this.state
+    const filterList = emojisList.find(each => each.id === id)
+    const checkItem = filteredList.includes(filterList)
     let score
-    if(
     if (checkItem === true) {
       if (totalScore > topScore) {
         score = totalScore
-      }  else {
+      } else {
         score = topScore
       }
       this.setState({winOrLose: true, topScore: score})
-    } 
-    else {
+    } else if (filteredList.length === 11) {
+      this.setState({winOrLose: true, topScore: 12, win: true})
+    } else {
       this.setState(prevState => ({
-        filteredList: [...prevState.filteredList, filterList[0],
+        filteredList: [...prevState.filteredList, filterList],
         winOrLose: false,
         totalScore: prevState.totalScore + 1,
       }))
@@ -137,12 +137,11 @@ class EmojiGame extends Component {
   }
 
   render() {
-    const {topScore, totalScore, winOrLose} = this.state
+    const {topScore, totalScore, winOrLose, filteredList, win} = this.state
     const emojisItems = shuffledEmojisList()
-    console.log(totalScore)
     let cont
     if (winOrLose) {
-      if (totalScore === 10) {
+      if (win) {
         cont = (
           <div className="result-cont">
             <div className="cont1">
@@ -211,7 +210,9 @@ class EmojiGame extends Component {
           topScore={topScore}
           winOrLose={winOrLose}
         />
-        <div className="items-cont"> {cont}</div>
+        <div className="container2">
+          <div className="items-cont"> {cont}</div>
+        </div>
       </div>
     )
   }
